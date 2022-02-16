@@ -1,0 +1,167 @@
+@font-face {
+  font-family: regularRoboto;
+  src: url('./assets/fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: mediumRoboto;
+  src: url(./assets/fonts/Roboto-Medium.ttf);
+}
+
+@font-face {
+  font-family: popone;
+  src: url(./assets/fonts/MochiyPopPOne-Regular.ttf);
+}
+
+:root {
+  --primary: #f80;
+  --secondary: #eee;
+}
+
+.secondary_text {color: var(--secondary);}
+
+#App {
+  background: #141414;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(10px + 2vmin);
+}
+
+.title {
+  color: #eee;
+  font-family: popone;
+}
+
+.logofield {
+  width: 4rem;
+  height: 4rem;
+}
+
+.logofield a img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.linksfield {width: 45%;}
+
+.linksfield a,
+.lastfield a {
+  font-size: 17px;
+  font-family: regularRoboto;
+  color: #f80;
+}
+
+.lastfield a {
+  font-size: 1.5rem;
+}
+
+.lastfield a:hover {opacity: .9;}
+
+.active {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2em;
+}
+
+.active::after {
+  content: "";
+  height: 3px;
+  border-radius: 2px;
+  background: var(--primary);
+  animation: linkActiveAnimation .25s ease-in 0s forwards;
+}
+
+.diapo_product_image {animation: fade_in_left 1s ease 0s forwards;}
+
+.diapo_product_image img {
+  width: 100%;
+  height: 100%;
+}
+
+.diapo_products_name_and_desc {animation: fade_in_right 1s ease 0s forwards;}
+
+.diapo_products_name_and_desc h1 {
+  font-size: 45px;
+  font-family: popone;
+  color: var(--primary);
+}
+
+.diapo_products_name_and_desc p {
+  font-size: 17px;
+  color: #ddd;
+  font-family: popone;
+}
+
+.order_and_ingredients_btns a {
+  font-size: 17px;
+  font-family: regularRoboto;
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.order_and_ingredients_btns a:first-of-type {
+  background: var(--primary);
+  border-radius: 10px;
+  color: #eee;
+  margin-right: 1rem;
+  transition: all .3s;
+}
+
+.order_and_ingredients_btns a:first-of-type:focus {filter: brightness(.8);}
+
+.order_and_ingredients_btns a:last-of-type {color: var(--primary);}
+
+.order_and_ingredients_btns a:last-of-type:focus {
+  border: .1px dashed var(--primary);
+  border-radius: 10px;
+}
+
+@keyframes linkActiveAnimation {
+  from {
+    width: 0rem;
+  }
+
+  to {
+    width: 2rem;
+  }
+}
+
+@keyframes fade_in_left {
+  from {
+    transform: translateX(-5vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes fade_in_right {
+  from {
+    transform: translateX(5vw);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .linksfield {width: 65%;}
+  .diapo_products_name_and_desc h1 {font-size: 32px;}
+  .diapo_products_name_and_desc p {font-size: 14px;}
+  .order_and_ingredients_btns a {
+    font-size: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  @media (max-width: 767px) {
+    
+  }
+}
