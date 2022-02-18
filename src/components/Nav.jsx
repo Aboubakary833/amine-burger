@@ -14,18 +14,19 @@ const Nav = () => {
                     </Link>
                 </div>
                 <div className="linksfield d-none d-md-flex justify-content-evenly align-items-center">
-                    <NavLink to='/'>Acceuil</NavLink>
-                    <NavLink to='/menus'>Menus</NavLink>
-                    <NavLink to='/localisation'>Localisation</NavLink>
+                    <NavLink to='/' className={({isActive}) => isActive ? 'active' : null}>Acceuil</NavLink>
+                    <NavLink to='/menus' className={({isActive}) => isActive ? 'active' : null}>Menus</NavLink>
+                    <NavLink to='/about' className={({isActive}) => isActive ? 'active' : null}>À propos</NavLink>
+                    <NavLink to='/contacts' className={({isActive}) => isActive ? 'active' : null}>Contacts</NavLink>
                 </div>
             </div>
             <div className='lastfield'>
-                <NavLink to='/account' className={`mx-1 ${({isActive}) => 'active'}`}>
+                <Link to='/account' className="mx-1">
                     <BiUser />
-                </NavLink>
-                <NavLink to='/account' className={`mx-1 ${({isActive}) => 'active'}`}>
+                </Link>
+                <Link to='/account' className="mx-1">
                     <BsBag />
-                </NavLink>
+                </Link>
             </div>
         </div>
     );
