@@ -10,10 +10,13 @@ const Bag = () => {
     }
     return (
         <div className='mt-2 mt-md-4'>
-            <div className="row gap-2">
-
-                <Block title="Mon panier" data={test_product} />
-
+            <div className="container">
+                <div className="row">
+                    <Block title="Mon panier" data={test_product} />
+                    <Block title="Commandes en cours" data={test_product} />
+                    <Block title="Commandes non aboutis" data={test_product} />
+                    <Block title="Historique des commandes" data={test_product} />
+                </div>
             </div>
         </div>
     );

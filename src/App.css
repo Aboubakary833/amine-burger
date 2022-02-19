@@ -270,7 +270,9 @@
 
 .text-popone {font-family: popone;}
 
-.cart {border: .1px solid #3d3d3d;}
+.cart {background: #171717;}
+
+/* .cart {border: .1px solid #3d3d3d;} */
 
 .product {
   width: 100%;
