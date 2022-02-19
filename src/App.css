@@ -270,6 +270,25 @@
 
 .text-popone {font-family: popone;}
 
+.cart {border: .1px solid #3d3d3d;}
+
+.product {
+  width: 100%;
+  background: #202020;
+  padding: 3px;
+}
+
+.product p {
+  color: #ddd;
+  font-size: 16px;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.product img {
+  width: 4rem;
+}
+
 @keyframes linkActiveAnimation {
   from {
     width: 0rem;
