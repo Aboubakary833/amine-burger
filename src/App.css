@@ -55,6 +55,7 @@
   font-size: 17px;
   font-family: regularRoboto;
   color: #f80;
+  padding: 4px 5px;
 }
 
 .lastfield a {
@@ -188,7 +189,7 @@
   padding: 8px 12px;
 }
 
-.about h1 {
+.about h1, .profile h1 {
   font-size: 45px;
   color: var(--primary);
   font-family: popone;
@@ -259,6 +260,15 @@
 .form-group button[type="submit"]:focus {
   box-shadow: 0 0 1px 1px rgba(255, 136, 0, 0.5);
 }
+
+.avatar {
+  width: 100%;
+  box-shadow: 0 0 0 5px rgba(255, 136, 0, 0.5);
+}
+
+.text-suncolor {color: var(--primary);}
+
+.text-popone {font-family: popone;}
 
 @keyframes linkActiveAnimation {
   from {
@@ -409,7 +419,7 @@
     font-size: 16px;
   }
 
-  .about h1 {
+  .about h1, .profile h1 {
     font-size: 30px;
   }
 

@@ -25,11 +25,11 @@ const Nav = () => {
                     <NavLink to='/contacts' className={({isActive}) => isActive ? 'active' : null}>Contacts</NavLink>
                 </div>
             </div>
-            <div className='lastfield'>
+            <div className='lastfield d-flex justify-content-center align-items-center'>
                 <Link to='/account' className="mx-1">
                     <BiUser />
                 </Link>
-                <Link to='/account' className="mx-1">
+                <Link to='/bag' className="mx-1">
                     <BsBag />
                 </Link>
             </div>
