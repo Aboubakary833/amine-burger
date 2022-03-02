@@ -6,16 +6,19 @@ const Bag = () => {
     const test_product = {
         name: "Le burger classique",
         img: testBurger,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint at minus ipsa earum, corporis dolor exercitationem nesciunt distinctio ex, molestiae voluptas ratione ea accusantium blanditiis doloremque, quaerat eius sequi ab?"
+        amount: "2",
+        created_at: "18/05/2022"
     }
     return (
         <div className='mt-2 mt-md-4'>
             <div className="container">
                 <div className="row">
                     <Block title="Mon panier" data={test_product} />
-                    <Block title="Commandes en cours" data={test_product} />
-                    <Block title="Commandes non aboutis" data={test_product} />
-                    <Block title="Historique des commandes" data={test_product} />
+                    <Block title="Commandes en cours" data={test_product} isCommand={true} />
+                </div>
+                <div className="row my-2">
+                    <Block title="Commandes non aboutis" data={test_product} isCommand={true} />
+                    <Block title="Historique des commandes" data={test_product} isCommand={true} />
                 </div>
             </div>
         </div>

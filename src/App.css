@@ -291,6 +291,19 @@
   width: 4rem;
 }
 
+.product .amount {
+  width: 30px;
+  height: 30px;
+  background: var(--primary);
+  color: #eee;
+  margin-right: 5px;
+}
+
+.time {
+  margin-top: 5px;
+  color: #eee;
+}
+
 @keyframes linkActiveAnimation {
   from {
     width: 0rem;

@@ -1,8 +1,11 @@
 import React from 'react';
 import Diapo from '../components/Diapo';
 import testBurger from '../assets/images/burger.png'
+import { useSelector } from 'react-redux';
 
 const Home = () => {
+    const diapoData = useSelector((store) => store.productsReducer[0])
+    console.log(diapoData);
     const test_product = {
         name: "Le burger classique",
         img: testBurger,
