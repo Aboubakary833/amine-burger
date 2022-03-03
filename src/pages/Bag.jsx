@@ -13,7 +13,7 @@ const Bag = () => {
         <div className='mt-2 mt-md-4'>
             <div className="container">
                 <div className="row">
-                    <Block title="Mon panier" data={test_product} />
+                    <Block title="Mon panier" data={test_product} isBag={true} />
                     <Block title="Commandes en cours" data={test_product} isCommand={true} />
                 </div>
                 <div className="row my-2">

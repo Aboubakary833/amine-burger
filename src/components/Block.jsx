@@ -1,7 +1,11 @@
 import React from 'react';
 import Product from './Product';
 
-const Block = ({title, data, isCommand}) => {
+const Block = ({title, data, isCommand, isBag}) => {
+
+    const commandBtn = <form action="#" method='post'>
+        <button type="submit" className='command_btn border-0 outline-none'>Commander</button>
+    </form>
 
     return (
         <div className="col-12 col-md-6 cart rounded">
@@ -20,6 +24,9 @@ const Block = ({title, data, isCommand}) => {
                             <Product product={data} hasAdditional={isCommand} />
                         </div>
                     </div>
+                    {
+                        isBag ? commandBtn : null
+                    }
                 </div>
     );
 }

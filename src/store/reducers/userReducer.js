@@ -1,5 +1,14 @@
+import { createSlice } from "@reduxjs/toolkit"
+
 const initialState = null
 
-export default function userReducer(state = initialState, action) {
-    return state
-}
+const userSlice = createSlice({
+    name: 'user',
+    initialState,
+    reducers: {
+
+    }
+})
+
+
+export default userSlice.reducer

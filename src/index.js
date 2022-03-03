@@ -6,11 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import {BrowserRouter} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import store from './store'
-import { getHomeProduct } from './store/actions/productsActions';
-
-//Dispatch main reducers
-
-store.dispatch(getHomeProduct())
 
 ReactDOM.render(
           <Provider store={store}>

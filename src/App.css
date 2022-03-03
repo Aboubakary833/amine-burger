@@ -100,7 +100,7 @@
 }
 
 .diapo_products_name_and_desc p {
-  font-size: 17px;
+  font-size: 19px;
   color: #ddd;
   font-family: popone;
 }
@@ -112,7 +112,20 @@
   padding-bottom: 15px;
 }
 
-.order_and_ingredients_btns a:first-of-type {
+.command_btn {
+  width: fit-content;
+  height: fit-content;
+  font-size: 17px;
+  padding: 10px 15px;
+  font-family: regularRoboto;
+  background: var(--primary);
+  border-radius: 10px;
+  color: #eee;
+  margin-right: 1rem;
+  transition: all .3s;
+}
+
+.order_and_ingredients_btns a {
   background: var(--primary);
   border-radius: 10px;
   color: #eee;
@@ -125,17 +138,8 @@
   font-weight: lighter !important;
 }
 
-.order_and_ingredients_btns a:first-of-type:focus {
+.order_and_ingredients_btns a:focus, .command_btn:focus {
   filter: brightness(.8);
-}
-
-.order_and_ingredients_btns a:last-of-type {
-  color: var(--primary);
-}
-
-.order_and_ingredients_btns a:last-of-type:focus {
-  border: .1px dashed var(--primary);
-  border-radius: 10px;
 }
 
 .card {

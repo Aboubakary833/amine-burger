@@ -1,14 +1,16 @@
-import { GET_HOME_PRODUCT } from "../actions/productsActions";
+import {createSlice} from '@reduxjs/toolkit'
 
-
-const intitalState = {}
-
-export default function productsReducer(state = intitalState, action) {
-    switch (action.type) {
-        case GET_HOME_PRODUCT:
-            return action.payload
-    
-        default:
+const productSlice = createSlice({
+    name: 'products',
+    initialState: [],
+    reducers: {
+        fillProductStore(state, action) {
+            state = action.payload
             return state
+        }
     }
-}
+})
+
+export const {fillProductStore} = productSlice.actions
+
+export default productSlice.reducer
