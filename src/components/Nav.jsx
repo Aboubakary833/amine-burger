@@ -19,7 +19,7 @@ const Nav = () => {
                     </Link>
                 </div>
                 <div className={`linksfield ${showNav ? 'd-flex' : 'd-none d-md-flex'} flex-column flex-md-row justify-content-evenly align-items-center`}>
-                    <NavLink to='/' className={({isActive}) => isActive ? 'active' : null}>Acceuil</NavLink>
+                    <NavLink to='/' className={({isActive}) => isActive ? 'active' : null}>Accueil</NavLink>
                     <NavLink to='/menus' className={({isActive}) => isActive ? 'active' : null}>Menus</NavLink>
                     <NavLink to='/about' className={({isActive}) => isActive ? 'active' : null}>À propos</NavLink>
                     <NavLink to='/contacts' className={({isActive}) => isActive ? 'active' : null}>Contacts</NavLink>

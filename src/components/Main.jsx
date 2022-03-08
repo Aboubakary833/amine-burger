@@ -4,8 +4,10 @@ import About from '../pages/About';
 import Bag from '../pages/Bag';
 import Contact from '../pages/Contact';
 import Home from '../pages/Home';
+import Login from '../pages/Login';
 import Menu from '../pages/Menu';
 import Profile from '../pages/Profile';
+import Register from '../pages/register';
 
 const Main = () => {
     return (
@@ -17,6 +19,8 @@ const Main = () => {
                 <Route  path='/contacts' element={<Contact />} />
                 <Route  path='/account' element={<Profile />} />
                 <Route  path='/bag' element={<Bag />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
             </Routes>
         </div>
     );

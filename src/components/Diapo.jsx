@@ -12,7 +12,7 @@ const Diapo = () => {
                 <h1 className='mb-4'>Amine Burger!</h1>
                 <p>À vous le choix entre les plus délicieux des burgers! Du burger classique, à l'épicé en passant par le burger au fromage et bien d'autres encore...</p>
                 <div className="order_and_ingredients_btns mt-2">
-                    <Link to="/menus"className='px-1'>Commencer les commandes</Link>
+                    <Link to="/menus" className='px-1'>Commencer les commandes</Link>
                 </div>
             </div>
         </div>

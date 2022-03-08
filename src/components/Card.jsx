@@ -6,7 +6,7 @@ const Card = ({ product }) => {
     const [needNumber, setNeedNumber] = useState(1)
     
     return (
-        <div className="col-12 col-sm-6 col-lg-4">
+        <div className="col-12 col-md-6 col-lg-4">
             <div className='card border-0'>
                 <div className="card_img d-flex justify-content-center align-items-center">
                     <img src={product.img} alt={product.name} />

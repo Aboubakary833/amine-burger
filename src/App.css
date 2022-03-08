@@ -308,6 +308,146 @@
   color: #eee;
 }
 
+.unauthenticated {
+  width: 50%;
+  height: fit-content;
+  background-color: #202020;
+}
+
+.unauthenticated p {
+  font-size: 19px;
+  font-family: regularRoboto;
+}
+
+.auth {
+  background: var(--primary);
+  padding: 10px;
+  font-size: 19px;
+  font-family: regularRoboto;
+}
+
+.unauthenticated span {font-size: 17px;}
+
+.login {
+  width: 50%;
+}
+
+.bullets {
+  width: 20%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.active_bullet {
+  border: .5px solid var(--primary);
+  background: var(--primary);
+}
+
+.bullets div {
+  width: 16px;
+  height: 16px;
+  border: .5px solid #3d3d3d;
+}
+
+.slide_out {
+  animation: slide_out .5s ease-out 0s forwards;
+}
+
+.register_form {
+  animation: slide_in .5s ease-in 0s forwards;
+}
+
+.alert {
+  width: 90%;
+  margin: auto;
+  font-size: 16px;
+  font-family: regularRoboto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.alert button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.alert-success {
+  background: rgb(65, 160, 60);
+  color: rgb(15, 45, 15);
+}
+
+.alert-danger {
+  background: rgb(245, 75, 75);
+  color: rgb(45, 10, 10);
+}
+
+.command_list div:last-of-type {border-bottom: none;}
+
+.command {
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  height: fit-content;
+  padding: 5px;
+  font-family: regularRoboto;
+  background-color: #202020;
+  border-bottom: .1px solid #3d3d3d;
+}
+
+.command img {
+  width: 60px;
+  height: 52px;
+}
+
+.command div:first-of-type {
+  font-size: 17px;
+  color: #ddd;
+}
+
+.command div:first-of-type small {margin-left: 10px;}
+
+.command div:last-of-type {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.command div:last-of-type span:first-of-type {
+  font-size: 16px;
+  color: var(--primary);
+}
+
+.command div:last-of-type span:last-of-type {
+  font-size: 16px;
+  color: #707070;
+  margin-right: 10px;
+}
+
+@keyframes slide_in {
+  from {
+    opacity: 0;
+    transform: translateX(2rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+}
+@keyframes slide_out {
+  from {
+    opacity: 1;
+    transform: translateX(0rem);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-2rem);
+  }
+}
+
 @keyframes linkActiveAnimation {
   from {
     width: 0rem;
@@ -380,6 +520,10 @@
     width: 65%;
   }
 
+  .command {width: 100%;}
+
+  .unauthenticated {width: 75%;}
+
   .diapo_products_name_and_desc h1 {
     font-size: 32px;
     margin: auto;
@@ -394,6 +538,8 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+  
 }
 
 @media (max-width: 767px) {
@@ -408,6 +554,12 @@
     box-shadow: 0 3px 3px #171717;
     animation: navFading .5s ease 0s forwards;
     z-index: 1;
+  }
+
+  .unauthenticated {width: 100%;}
+
+  .login {
+    width: 75%;
   }
 
   .logofield {
@@ -428,9 +580,16 @@
     color: var(--primary);
     background: transparent;
   }
+
+  .command div:first-of-type {
+    font-size: 18px;
+  }
 }
 
 @media (max-width: 575px) {
+  .command div:first-of-type small {display: none;}
+  .command div:last-of-type {width: 70%;}
+  .command_link {font-size: 14px;}
   .logo_and_links {
     width: fit-content !important;
   }
@@ -484,4 +643,15 @@
     padding-top: 10px;
     padding-bottom: 10px;
   }
+
+  .unauthenticated {
+    width: 100% !important;
+    margin: auto;
+  }
+
+  .unauthenticated h1 {font-size: 21px !important;}
+  .unauthenticated p {font-size: 16px;}
+  .unauthenticated .auth {font-size: 16px;}
+
+  .login {width: 100%;}
 }
