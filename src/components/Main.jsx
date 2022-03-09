@@ -3,11 +3,13 @@ import { Route, Routes } from 'react-router-dom';
 import About from '../pages/About';
 import Bag from '../pages/Bag';
 import Contact from '../pages/Contact';
+import History from '../pages/History';
 import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Menu from '../pages/Menu';
 import Profile from '../pages/Profile';
 import Register from '../pages/register';
+import Rejected from '../pages/Rejected';
 
 const Main = () => {
     return (
@@ -21,6 +23,8 @@ const Main = () => {
                 <Route  path='/bag' element={<Bag />} />
                 <Route path='/login' element={<Login />} />
                 <Route path='/register' element={<Register />} />
+                <Route path='/rejected_commands' element={<Rejected />} />
+                <Route path='/commands_history' element={<History />} />
             </Routes>
         </div>
     );

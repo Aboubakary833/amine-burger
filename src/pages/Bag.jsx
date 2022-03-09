@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import testBurger from '../assets/images/burger.png'
 import Command from '../components/Command';
+import Unauthenticated from '../components/UnAuthenticated';
+import Loading from '../components/Loading';
 
 const Bag = () => {
+
+    const user = useSelector(store => store.user)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(() => {
+            if(user) setTimeout(() => setIsLoading(false), 300);
+    }, [user])
+
     const test_product = {
         name: "Le burger classique",
         image: testBurger,
@@ -11,7 +22,8 @@ const Bag = () => {
         amount: 2,
         created_at: "18/05/2022"
     }
-    return (
+
+    const content = (
         <div className='mt-2 mt-md-4'>
             <div className="container">
                 <div className="row">
@@ -35,12 +47,14 @@ const Bag = () => {
                         <Link to="/rejected_commands" className='auth text-white rounded command_link'>Commandes réjétées</Link>
                     </div>    
                     <div className="col-12 col-md-6 mt-2 mt-md-0 text-center">
-                        <Link to="/rejected_commands" className='auth text-white rounded command_link'>Historique de mes commandes</Link>
+                        <Link to="/commands_history" className='auth text-white rounded command_link'>Historique de mes commandes</Link>
                     </div>    
                 </div>
             </div>
         </div>
     );
+
+    return isLoading ? <Loading/> : (user ? content : <Unauthenticated />);
 }
 
 export default Bag;

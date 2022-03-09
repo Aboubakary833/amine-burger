@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import Stepsform from '../components/StepsForm';
-import forms from './additionals/register_forms';
 
 const Register = () => {
     const [activeFormIndex, setActiveFormIndex] = useState(0)
     const bullets = []
-    for(let i = 0; i < forms.length; i++) bullets.push(i)
+    for(let i = 0; i < 5; i++) bullets.push(i)
 
     return (
         <div className='login card mx-auto mt-4'>

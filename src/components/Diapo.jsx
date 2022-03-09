@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Burger from '../assets/images/burger.png'
+import Loading from './Loading';
 
 const Diapo = () => {
-    return (
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(_ => {
+        if(Burger) setTimeout(_ => setIsLoading(false), 300)
+    })
+
+    return isLoading ? <Loading /> : (
         <div className='row d-flex align-items-center'>
             <div className="col-12 col-md-6 diapo_product_image">
                 <img src={Burger} alt="Burger classique" />
