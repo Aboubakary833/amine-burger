@@ -13,6 +13,7 @@ const Bag = () => {
 
     useEffect(() => {
             if(user) setTimeout(() => setIsLoading(false), 300);
+            else setTimeout(() => setIsLoading(false), 150);
     }, [user])
 
     const test_product = {

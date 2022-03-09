@@ -1,17 +1,22 @@
-import React from 'react';
-import testBurger from '../assets/images/burger.png'
+import React, { useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 import Card from '../components/Card';
+import Loading from '../components/Loading';
 
 const Menu = () => {
-    const test_product = {
-        name: "Le burger classique",
-        img: testBurger,
-        description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint at minus ipsa earum, corporis dolor exercitationem nesciunt distinctio ex, molestiae voluptas ratione ea accusantium blanditiis doloremque, quaerat eius sequi ab?"
-    }
-    return (
+    const products = useSelector(store => store.products)
+    const [isLoading, setIsLoading] = useState(true)
+
+    useEffect(_ => {
+        if(products) setTimeout(_ => setIsLoading(false), 500)
+        else setTimeout(() => setIsLoading(false), 150);
+    })
+    return isLoading ? <Loading /> : (
         <div className='mt-4 mt-lg-3 mb-2'>
             <div className="row g-3">
-                <Card product={test_product} />
+                {products.map((product, index) => {
+                    return <Card product={product} key={index} />
+                })}
             </div>
         </div>
     );

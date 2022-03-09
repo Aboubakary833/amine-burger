@@ -10,6 +10,7 @@ const Profile = () => {
 
     useEffect(() => {
             if(user) setTimeout(() => setIsLoading(false), 500);
+            else setTimeout(() => setIsLoading(false), 150);
     }, [user])
 
     const profile = (<div className='profile mt-2 mt-md-4'>
