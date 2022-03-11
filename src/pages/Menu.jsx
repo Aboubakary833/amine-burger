@@ -4,12 +4,12 @@ import Card from '../components/Card';
 import Loading from '../components/Loading';
 
 const Menu = () => {
-    const products = useSelector(store => store.products)
+    const {products} = useSelector(store => store)
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(_ => {
-        if(products) setTimeout(_ => setIsLoading(false), 500)
-        else setTimeout(() => setIsLoading(false), 150);
+        if(products) setTimeout(_ => setIsLoading(false), 1700)
+        else setTimeout(() => setIsLoading(false), 1000);
     })
     return isLoading ? <Loading /> : (
         <div className='mt-4 mt-lg-3 mb-2'>

@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useRef, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HOST } from '../env'
 import { login } from '../store/reducers/userReducer';
 import Alert from '../components/Alert'
@@ -10,6 +10,7 @@ const Login = () => {
     const email = useRef()
     const password = useRef()
     const dispatch = useDispatch()
+    const navigate = useNavigate()
     const [isAlert, setIsAlert] = useState({ active: false, type: null, content: null })
     const alert = <Alert type={isAlert.type}>{isAlert.content}</Alert>
 
@@ -59,7 +60,10 @@ const Login = () => {
             })
 
             dispatch(login(data))
-            localStorage.setItem('auth_user', JSON.stringify(data))
+            localStorage.setItem('auth_user', btoa(JSON.stringify(data)))
+            setTimeout(() => {
+                navigate(-1)
+            }, 1000);
             
         } catch (error) {
             const {data} = error.response

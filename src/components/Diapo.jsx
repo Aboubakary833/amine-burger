@@ -7,7 +7,7 @@ const Diapo = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     useEffect(_ => {
-        if(Burger) setTimeout(_ => setIsLoading(false), 300)
+        if(Burger) setTimeout(_ => setIsLoading(false), 400)
     })
 
     return isLoading ? <Loading /> : (

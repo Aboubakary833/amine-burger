@@ -12,20 +12,15 @@ const App = () => {
 
   const dispatch = useDispatch()
 
-  useEffect(function() {
-    (async function() {
-      const auth_user = JSON.parse(localStorage.getItem('auth_user')) || null
-   if(auth_user) {
-    const {data} = await axios.get(`${HOST}/api/menu`, {
-      headers: {
-        "Authorization": `Bearer ${auth_user.auth_token}`
-      }
-    })
+  useEffect(function () {
+    (async function () {
+      let auth_user = null
+      if (localStorage.getItem('auth_user')) auth_user = JSON.parse(atob(localStorage.getItem('auth_user')))
 
-    dispatch(login(auth_user))
-    dispatch(fillProductStore(data))
-   }
-      
+      const { data } = await axios.get(`${HOST}/api/menu`)
+      dispatch(login(auth_user))
+      dispatch(fillProductStore(data))
+
     })()
   })
 
