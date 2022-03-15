@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '../components/Alert';
 import { HOST } from '../env';
 
-const Password = () => {
-
+const Newpassword = () => {
+    
     const [formData, setFormData] = useState({
         password: null,
         confirm_password: null
@@ -21,7 +21,7 @@ const Password = () => {
     return (
         <div className='login card mx-auto my-3'>
             <div className="card-header">
-                <h1 className="text-center text-popone text-suncolor">Entrez votre mot de passe</h1>
+                <h1 className="text-center text-popone text-suncolor">Entrez votre nouveau mot de passe</h1>
             </div>
             {isAlert.active ? alert : null}
             <div className="card-body">
@@ -69,4 +69,4 @@ const Password = () => {
     }
 }
 
-export default Password;
+export default Newpassword;

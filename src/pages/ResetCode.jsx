@@ -4,35 +4,22 @@ import { useNavigate } from 'react-router-dom';
 import Alert from '../components/Alert';
 import { HOST } from '../env';
 
-const Password = () => {
-
-    const [formData, setFormData] = useState({
-        password: null,
-        confirm_password: null
-    })
-
+const Resetcode = () => {
+    const [formData, setFormData] = useState({code: null})
+    const navigate = useNavigate()
     const [isAlert, setIsAlert] = useState({ active: false, type: null, content: null })
     const alert = <Alert type={isAlert.type}>{isAlert.content}</Alert>
-
-    const navigate = useNavigate()
-    const uuid = sessionStorage.getItem('user')
-    if(!uuid) navigate(-1)
-
     return (
         <div className='login card mx-auto my-3'>
             <div className="card-header">
-                <h1 className="text-center text-popone text-suncolor">Entrez votre mot de passe</h1>
+                <h1 className="text-center text-popone text-suncolor">Confirmation de l'adresse email</h1>
             </div>
             {isAlert.active ? alert : null}
             <div className="card-body">
-                <form action={`${HOST}/api/password`} method="post" onSubmit={(e) => handleSubmit(e)}>
+                <form action={`${HOST}/api/reset_code`} method="post" onSubmit={(e) => handleSubmit(e)}>
                     <div className="form-group mb-2">
-                        <label htmlFor="password">Mot de passe: </label>
-                        <input type="password" name="password" id="password" className="form-control" placeholder='Entrez votre mot de passe' required onChange={(e) => setFormData({ ...formData, password: e.target.value })} />
-                    </div>
-                    <div className="form-group mb-2">
-                        <label htmlFor="phone">Confirmation du mot de passe: </label>
-                        <input type="password" name="confirm_password" id="confirm_password" className="form-control" placeholder='Rentrez le mot de passe' required onChange={(e) => setFormData({ ...formData, confirm_password: e.target.value })} />
+                        <label htmlFor="code">Code de confirmation: </label>
+                        <input type="number" name="code" id="code" className="form-control" placeholder='Entrez le code' required onChange={(e) => setFormData({code: e.target.value})} />
                     </div>
                     <div className="form-group text-center">
                         <button type="submit" className="text-white outline-0 border-0 rounded auth">Envoyer</button>
@@ -45,17 +32,18 @@ const Password = () => {
     async function handleSubmit(e) {
         e.preventDefault()
         e.target.reset()
-        formData['uuid'] = uuid
         try {
-            const {data} = await axios.post(e.target.action, formData)
+            const {data, uuid} = await axios.post(e.target.action, formData)
             setIsAlert({
                 active: true,
                 type: 'success',
                 content: data.success
             })
 
+            sessionStorage.setItem('user', uuid)
+
             setTimeout(() => {
-                navigate('/home')
+                navigate('/new_password')
             }, 1000);
 
         } catch (error) {
@@ -69,4 +57,4 @@ const Password = () => {
     }
 }
 
-export default Password;
+export default Resetcode;
